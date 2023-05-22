@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Welcome, you are now logged in!</h1>
+    <h2>Change Password</h2>
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+    <form action="{{ url_for('profile') }}" method="POST">
+      <label for="current_password">Current Password:</label>
+      <input type="password" name="current_password" required>
+
+      <label for="new_password">New Password:</label>
+      <input type="password" name="new_password" required>
+
+      <input type="submit" value="Save">
+    </form>
+  </div>
+{% endblock %}
+
+<style>
+  body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    padding: 40px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #000;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #000;
+    margin-top: 1em;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: .3em;
+    color: #000;
+  }
+
+  input[type="password"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  .error {
+    color: #D8000C;
+    padding: 10px;
+    background-color: #FFD2D2;
+  }
+</style>

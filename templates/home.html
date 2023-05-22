@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 1.2em;
+      }
+      a {
+        color: #4caf50;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    {% extends 'base.html' %} {% block title %}Home{% endblock %} {% block
+    content %}
+    <h1>Welcome, {{ username }}!</h1>
+    <p>This is the home page.</p>
+    {% endblock %}
+
+    <div class="container">
+      <h1>Welcome, {{ username }}!</h1>
+      <p><a href="{{ url_for('logout') }}">Logout</a></p>
+    </div>
+  </body>
+</html>

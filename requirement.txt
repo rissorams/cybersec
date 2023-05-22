@@ -1,0 +1,5 @@
+flask
+Flask_Limiter
+werkzeug
+smtplib
+python-dotenv
